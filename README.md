@@ -11,3 +11,4 @@ iOS Project API Server
   *.npm i express
   *.npm i cors
   *.npm i dotenv
+  *.npm i mongoose
