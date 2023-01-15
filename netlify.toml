@@ -1,8 +1,6 @@
 [build]
     functions = "server"
-    environment = {
-        MONGO_DB_CONNECTION_URL=mongodb+srv://chalaka95:29Q1AlTiH8EQF3t5@cluster0.ovijmw2.mongodb.net/iOS-FoodApp?retryWrites=true&w=majority
-  }
+
 
 [[redirects]]
     from = "/api/*"
