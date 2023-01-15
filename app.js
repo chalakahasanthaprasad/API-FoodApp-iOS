@@ -16,13 +16,13 @@ const PORT = process.env.APP_RUNNING_PORT || 3000;
 const logger = require("./src/middlewares/logger");
 
 // Add Routes
-const recipeRouter = require("./src/routes/recipe");
+const foodRouter = require("./src/routes/food");
 
 // Add Middlewares routes
 app.use(cors());
 app.use(express.json());
 app.use(logger);
-app.use("/api/recipe", recipeRouter);
+app.use("/api/recipe", foodRouter);
 
 
 // Check runing port

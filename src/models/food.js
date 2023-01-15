@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-const recipeSchema = new mongoose.Schema({
-  recipeNo: { type: String, required: true, unique: true, maxlength: 10 },
+const foodSchema = new mongoose.Schema({
+  foodId: { type: String, required: true, unique: true, maxlength: 10 },
   name: { type: String, required: true, unique: true },
   description: { type: String, required: false, maxlength: 250 },
   categorie: { type: Array, required: true, default: [] },
@@ -11,5 +11,5 @@ const recipeSchema = new mongoose.Schema({
   createdDateTime: { type: Date, default: Date.now() },
 });
 
-const recipe = mongoose.model("recipe", recipeSchema);
-module.exports = recipe;
+const food = mongoose.model("food", foodSchema);
+module.exports = food;
