@@ -1,14 +1,23 @@
 # API-FoodApp-iOS
+
 iOS Project API Server
 
 1.Create Project and Clone
-  *.Create Git Repo
-  *.Then Clone to VSCode
+_.Create Git Repo
+_.Then Clone to VSCode
 
 2.Create Folder Structure
 
 3.Instrall NPM Packages
-  *.npm i express
-  *.npm i cors
-  *.npm i dotenv
-  *.npm i mongoose
+_.npm i express
+_.npm i cors
+_.npm i dotenv
+_.npm i mongoose
+
+_.npm i -g netlify-cli
+_.npm i serverless-http
+
+Power Shell \*
+Set-ExecutionPolicy RemoteSigned
+
+

@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-
+const serverless = require("serverless-http");
 // Create a Express
 const app = express();
 
@@ -10,7 +10,7 @@ const app = express();
 dotenv.config();
 
 // Define a PORT
-const PORT = process.env.APP_RUNNING_PORT || 3000;
+//const PORT = process.env.APP_RUNNING_PORT || 3000;
 
 // Add Middleware Path
 const logger = require("./src/middlewares/logger");
@@ -29,9 +29,9 @@ app.use("/api/user", userRouter);
 app.use("/api/favorite", favoriteFoodRouter);
 
 // Check runing port
-app.listen(PORT, () => {
-  console.log(`Successfully runing on Port : ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Successfully runing on Port : ${PORT}`);
+// });
 
 // Mongo DB Connections
 mongoose.set("strictQuery", false);
@@ -43,3 +43,5 @@ mongoose
   .then(() => console.log("Successfully connected to mongodb !"))
   .catch((err) => console.log(`Error has occured: ${err}`));
 
+module.exports = app;
+module.exports.handler = serverless(app);

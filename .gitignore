@@ -105,3 +105,5 @@ dist
 
 # Logger file
 request_logs.txt
+# Local Netlify folder
+.netlify
