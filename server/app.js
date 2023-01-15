@@ -1,19 +1,19 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+//const dotenv = require("dotenv");
 const serverless = require("serverless-http");
 // Create a Express
 const app = express();
 
 // Config .env
-dotenv.config();
+//dotenv.config();
 
 // Define a PORT
 //const PORT = process.env.APP_RUNNING_PORT || 3000;
 
 // Add Middleware Path
-const logger = require("./src/middlewares/logger");
+//const logger = require("./src/middlewares/logger");
 
 // Add Routes
 const foodRouter = require("./src/routes/food");
@@ -23,7 +23,7 @@ const favoriteFoodRouter = require("./src/routes/favoriteFood");
 // Add Middlewares routes
 app.use(cors());
 app.use(express.json());
-app.use(logger);
+//app.use(logger);
 app.use("/api/food", foodRouter);
 app.use("/api/user", userRouter);
 app.use("/api/favorite", favoriteFoodRouter);

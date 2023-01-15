@@ -7,5 +7,4 @@
     to = "/.netlify/functions/app/:splat"
     status = 200
 
-[context.dev.environment]
-  NODE_ENV = "development"
+
