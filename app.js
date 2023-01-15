@@ -17,12 +17,14 @@ const logger = require("./src/middlewares/logger");
 
 // Add Routes
 const foodRouter = require("./src/routes/food");
+const userRouter = require("./src/routes/user");
 
 // Add Middlewares routes
 app.use(cors());
 app.use(express.json());
 app.use(logger);
-app.use("/api/recipe", foodRouter);
+app.use("/api/food", foodRouter);
+app.use("/api/user", userRouter)
 
 
 // Check runing port
