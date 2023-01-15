@@ -18,14 +18,15 @@ const logger = require("./src/middlewares/logger");
 // Add Routes
 const foodRouter = require("./src/routes/food");
 const userRouter = require("./src/routes/user");
+const favoriteFoodRouter = require("./src/routes/favoriteFood");
 
 // Add Middlewares routes
 app.use(cors());
 app.use(express.json());
 app.use(logger);
 app.use("/api/food", foodRouter);
-app.use("/api/user", userRouter)
-
+app.use("/api/user", userRouter);
+app.use("/api/favorite", favoriteFoodRouter);
 
 // Check runing port
 app.listen(PORT, () => {
@@ -33,6 +34,7 @@ app.listen(PORT, () => {
 });
 
 // Mongo DB Connections
+mongoose.set("strictQuery", false);
 mongoose
   .connect(process.env.MONGO_DB_CONNECTION_URL, {
     useNewUrlParser: true,
@@ -40,3 +42,4 @@ mongoose
   })
   .then(() => console.log("Successfully connected to mongodb !"))
   .catch((err) => console.log(`Error has occured: ${err}`));
+
