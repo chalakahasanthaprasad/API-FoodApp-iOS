@@ -20,4 +20,4 @@ _.npm i serverless-http
 Power Shell \*
 Set-ExecutionPolicy RemoteSigned
 
-
+change db psw
