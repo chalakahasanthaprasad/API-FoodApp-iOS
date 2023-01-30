@@ -4,7 +4,7 @@ const foodSchema = new mongoose.Schema({
   foodId: { type: String, required: true, unique: true, maxlength: 10 },
   name: { type: String, required: true, unique: true },
   description: { type: String, required: false, maxlength: 250 },
-  categorie: { type: Array, required: true, default: [] },
+  cuisine: { type: String, required: true },
   nutrition: { type: Array, required: true, default: [] },
   ingredient: { type: Array, required: true, default: [] },
   imageUrl: { type: String, required: true },

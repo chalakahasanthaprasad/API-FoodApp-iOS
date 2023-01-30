@@ -17,12 +17,54 @@ foodRouter.get("/", async (req, res) => {
 foodRouter.get("/:foodId", async (req, res) => {
   try {
     let food = await foodModel.findOne({
-      foodNo: req.params.foodId,
+      foodId: req.params.foodId,
     });
 
     if (!food) {
       let errorObj = {
         message: "The given food Id does not exist",
+        statusCode: "NOT FOUND",
+      };
+      return res.status(404).send(errorObj);
+    }
+
+    res.status(200).send(food);
+  } catch (ex) {
+    return res.status(500).send(ex.message);
+  }
+});
+
+// Get food item details by food name
+foodRouter.get("/:name", async (req, res) => {
+  try {
+    let food = await foodModel.findOne({
+      name: req.params.name,
+    });
+
+    if (!food) {
+      let errorObj = {
+        message: "The given food name does not exist",
+        statusCode: "NOT FOUND",
+      };
+      return res.status(404).send(errorObj);
+    }
+
+    res.status(200).send(food);
+  } catch (ex) {
+    return res.status(500).send(ex.message);
+  }
+});
+
+// Get food item details by food name
+foodRouter.get("/:cuisine", async (req, res) => {
+  try {
+    let food = await foodModel.findOne({
+      name: req.params.name,
+    });
+
+    if (!food) {
+      let errorObj = {
+        message: "The given cuisine type does not exist",
         statusCode: "NOT FOUND",
       };
       return res.status(404).send(errorObj);

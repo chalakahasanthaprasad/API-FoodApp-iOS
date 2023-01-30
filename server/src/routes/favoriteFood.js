@@ -31,7 +31,7 @@ favoriteFoodRouter.get("/:userId", async (req, res) => {
         foodId: 1,
         name: 1,
         description: 1,
-        categorie: 1,
+        cuisine: 1,
         nutrition: 1,
         ingredient: 1,
         imageUrl: 1,
