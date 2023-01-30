@@ -5,8 +5,14 @@ const foodSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: true },
   description: { type: String, required: false, maxlength: 250 },
   cuisine: { type: String, required: true },
-  nutrition: { type: Array, required: true, default: [] },
-  ingredient: { type: Array, required: true, default: [] },
+
+  calories: { type: String },
+  carbohydrates: { type: String },
+  fat: { type: String },
+  protein: { type: String },
+  sugar: { type: String },
+
+  ingredient: { type: String, required: true },
   imageUrl: { type: String, required: true },
   isActive: { type: Boolean, required: true, default: true },
   createdDateTime: { type: Date, default: Date.now() },
