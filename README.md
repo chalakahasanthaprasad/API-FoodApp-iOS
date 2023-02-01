@@ -20,4 +20,8 @@ _.npm i serverless-http
 Power Shell \*
 Set-ExecutionPolicy RemoteSigned
 
+netlify dev
+netlify init
+netlify env:import .env site: coruscating-smakager-171246
+
 change db psw

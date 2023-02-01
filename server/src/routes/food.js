@@ -35,7 +35,7 @@ foodRouter.get("/:foodId", async (req, res) => {
 });
 
 // Get food item details by food name
-foodRouter.get("/:name", async (req, res) => {
+foodRouter.get("/store/:name", async (req, res) => {
   try {
     let food = await foodModel.findOne({
       name: req.params.name,
@@ -55,11 +55,11 @@ foodRouter.get("/:name", async (req, res) => {
   }
 });
 
-// Get food item details by food name
-foodRouter.get("/:cuisine", async (req, res) => {
+// Get food item details by cuisine
+foodRouter.get("/cuisine/:cuisine", async (req, res) => {
   try {
-    let food = await foodModel.findOne({
-      name: req.params.name,
+    let food = await foodModel.find({
+      cuisine: req.params.cuisine,
     });
 
     if (!food) {
