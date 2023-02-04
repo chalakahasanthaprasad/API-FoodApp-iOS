@@ -29,18 +29,7 @@ favoriteFoodRouter.get("/:userId", async (req, res) => {
     let foods = await async.map(favoriteFoods, async (food) => {
       return await foodModel.findOne({ foodId: food.foodId }).select({
         foodId: 1,
-        name: 1,
-        description: 1,
-        cuisine: 1,
-        calories: 1,
-        carbohydrates: 1,
-        fat: 1,
-        protein: 1,
-        sugar: 1,
-        ingredient: 1,
         imageUrl: 1,
-        isActive: 1,
-        createdDateTime: 1,
       });
     });
 
