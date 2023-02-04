@@ -57,4 +57,22 @@ userRouter.post("/", async (req, res) => {
   }
 });
 
+userRouter.post("/userdata", async (req, res) => {
+  try {
+    let user = await userModel.findOne({
+      email: req.body.email,
+    });
+
+    if (!user) return res.status(404).send("Email Address Not Found");
+
+    let pwValid = await bcrypt.compare(req.body.password, user.password);
+
+    if (!pwValid) return res.status(400).send("Password Incorrect");
+
+    return res.status(200).send(user.userId);
+  } catch (err) {
+    return res.status(500).send(`Error: ${err.message}`);
+  }
+});
+
 module.exports = userRouter;
