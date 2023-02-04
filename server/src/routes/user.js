@@ -46,7 +46,6 @@ userRouter.post("/", async (req, res) => {
       lastName: req.body.lastName,
       email: req.body.email,
       password: hashedPw,
-      imageUrl: req.body.imageUrl,
       isActive: req.body.isActive,
       createdDateTime: req.body.createdDateTime,
     });
