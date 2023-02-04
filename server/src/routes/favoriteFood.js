@@ -36,6 +36,22 @@ favoriteFoodRouter.get("/:userId", async (req, res) => {
         ingredient: 1,
         imageUrl: 1,
         isActive: 1,
+
+        foodId: 1,
+        name: 1,
+        description: 1,
+        cuisine: 1,
+
+        calories: 1,
+        carbohydrates: 1,
+        fat: 1,
+        protein: 1,
+        sugar: 1,
+
+        ingredient: 1,
+        imageUrl: 1,
+        isActive: 1,
+        createdDateTime: 1,
       });
     });
 

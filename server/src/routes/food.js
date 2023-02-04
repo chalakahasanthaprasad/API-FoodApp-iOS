@@ -37,7 +37,7 @@ foodRouter.get("/:foodId", async (req, res) => {
 // Get food item details by food name
 foodRouter.get("/store/:name", async (req, res) => {
   try {
-    let food = await foodModel.findOne({
+    let food = await foodModel.find({
       name: req.params.name,
     });
 
